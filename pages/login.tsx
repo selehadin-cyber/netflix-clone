@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import useAuth from '../hooks/useAuth'
@@ -49,7 +50,7 @@ function Login() {
         action=""
         className="relative mt-24 space-y-8 rounded bg-black/75 py-10 px-6 md:mt-0 md:max-w-md md:px-14"
       >
-        <h1 className="text-4xl font-semibold">Sign Up</h1>
+        <h1 className="text-4xl font-semibold">Log in</h1>
         <div className="space-y-4">
           <label htmlFor="" className="inline-block w-full">
             <input
@@ -88,7 +89,7 @@ function Login() {
         </button>
         <div className="text-[gray]">
           New to Netflix?{' '}
-          <button onClick={() => setLogin(false)} className="text-white hover:underline">Sign Up Now</button>
+          <button /* onClick={() => setLogin(false)} */ className="text-white hover:underline"><Link href={"/SignUp"}>Sign Up Now</Link></button>
         </div>
       </form>
     </div>

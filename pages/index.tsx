@@ -13,6 +13,7 @@ import useSubscription from '../hooks/useSubscription'
 import payments from '../lib/stripe'
 import { Movie } from '../typings'
 import requests from '../utils/requests'
+import Login from './login'
 
 interface Props {
   netflixOriginals: Movie[]
@@ -42,7 +43,7 @@ const Home = ({
   const showModal = useRecoilValue(modalState);
   const subscription = useSubscription(user);
 
-  if (loading) return null
+  if (loading) return <Login />
   if (!subscription) return <Plans products={products}/>
 
   return (
